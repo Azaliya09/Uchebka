@@ -16,18 +16,17 @@ using System.Windows.Shapes;
 namespace Uchebnaya_Azaliya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для StudentPage.xaml
+    /// Логика взаимодействия для SubjectPage.xaml
     /// </summary>
-    public partial class StudentPage : Page
+    public partial class SubjectPage : Page
     {
-        public StudentPage()
+        public SubjectPage()
         {
             InitializeComponent();
-            Navigation.NextPage(new PageComponent("hghghghg", new ExamenPage()));
-            if (App.IsAdmin == false)
-            {
-                AddBtn.Visibility = Visibility.Hidden;
-            }
+        }
+        private void SubjectList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

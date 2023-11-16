@@ -27,3 +27,5 @@ C:\Users\212118\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Uc
 C:\Users\212118\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Uchebnaya_Azaliya.pdb
 C:\Users\212118\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\ExamenPage.g.cs
 C:\Users\212118\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\ExamenPage.baml
+C:\Users\212118\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\SubjectPage.g.cs
+C:\Users\212118\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\SubjectPage.baml

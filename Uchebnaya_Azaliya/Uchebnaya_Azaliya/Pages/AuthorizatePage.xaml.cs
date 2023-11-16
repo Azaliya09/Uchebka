@@ -34,8 +34,12 @@ namespace Uchebnaya_Azaliya.Pages
                 App.IsAdmin = true;
                 MessageBox.Show("Вы вошли как администратор!");
             }
-
-            Navigation.NextPage(new PageComponent("Экзамен", new ExamenPage()));
+            else
+            {
+                App.IsAdmin = false;
+                MessageBox.Show("Вы вошли как студент!");
+            }
+            Navigation.NextPage(new PageComponent("", new StudentPage()));
         }
     }
 }
