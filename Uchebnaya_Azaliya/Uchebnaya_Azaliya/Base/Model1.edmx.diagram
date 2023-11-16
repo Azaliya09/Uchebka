@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="60777d0de60c4ae0877a3c86e193a39b" Name="Diagram1">
+        <EntityTypeShape EntityType="Uchebka_SSModel.Degree" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Employee" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Examen" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Faculty" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Lectern" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Position" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Specs" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Student" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.Subject" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Uchebka_SSModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Position_Degree" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Employee_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Employee_To_Chief" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Employee_To_Lectern" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Exam_To_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Exam_To_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Exam_To_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Lectern_To_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Specs_To_Lectern" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Subject_To_Lectern" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.FK_Student_To_Spec" ManuallyRouted="false" />
+        <AssociationConnector Association="Uchebka_SSModel.Request" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

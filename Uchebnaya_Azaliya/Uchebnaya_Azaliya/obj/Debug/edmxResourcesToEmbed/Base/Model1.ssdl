@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Uchebka_SSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Degree">
+    <Key>
+      <PropertyRef Name="Id_degree" />
+    </Key>
+    <Property Name="Id_degree" Type="int" Nullable="false" />
+    <Property Name="Degree" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id_Employee" />
+    </Key>
+    <Property Name="Id_Employee" Type="int" Nullable="false" />
+    <Property Name="Id_Lectern" Type="nvarchar" MaxLength="2" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_Position" Type="int" />
+    <Property Name="Salary" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Chief" Type="int" />
+    <Property Name="Stage" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Examen">
+    <Key>
+      <PropertyRef Name="Date_Examen" />
+      <PropertyRef Name="Id_Student" />
+    </Key>
+    <Property Name="Date_Examen" Type="date" Nullable="false" />
+    <Property Name="Id_Subject" Type="int" />
+    <Property Name="Id_Student" Type="int" Nullable="false" />
+    <Property Name="Id_Employee" Type="int" />
+    <Property Name="Auditory" Type="nvarchar" MaxLength="10" />
+    <Property Name="Mark" Type="int" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="Id_Faculty" />
+    </Key>
+    <Property Name="Id_Faculty" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Name_Faculty" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Lectern">
+    <Key>
+      <PropertyRef Name="Id_Lectern" />
+    </Key>
+    <Property Name="Id_Lectern" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Name_Lectern" Type="nvarchar" MaxLength="100" />
+    <Property Name="Id_Faculty" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Id_Position" />
+    </Key>
+    <Property Name="Id_Position" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="Id_Degree" Type="int" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="Id_Spec" />
+      <PropertyRef Name="Id_Subject" />
+    </Key>
+    <Property Name="Id_Spec" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Id_Subject" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specs">
+    <Key>
+      <PropertyRef Name="Id_Spec" />
+    </Key>
+    <Property Name="Id_Spec" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_Lectern" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id_Student" />
+    </Key>
+    <Property Name="Id_Student" Type="int" Nullable="false" />
+    <Property Name="Id_Spec" Type="nvarchar" MaxLength="8" />
+    <Property Name="Surname_Student" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id_Subject" />
+    </Key>
+    <Property Name="Id_Subject" Type="int" Nullable="false" />
+    <Property Name="Cize_Subject" Type="int" />
+    <Property Name="Name_Subject" Type="nvarchar" MaxLength="30" />
+    <Property Name="Id_Lectern" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Employee_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="Id_Position" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id_Position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_To_Chief">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Employee1" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id_Employee" />
+      </Principal>
+      <Dependent Role="Employee1">
+        <PropertyRef Name="Chief" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_To_Lectern">
+    <End Role="Lectern" Type="Self.Lectern" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lectern">
+        <PropertyRef Name="Id_Lectern" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id_Lectern" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_To_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id_Employee" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="Id_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_To_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id_Student" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="Id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_To_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id_Subject" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="Id_Subject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lectern_To_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="Lectern" Type="Self.Lectern" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="Id_Faculty" />
+      </Principal>
+      <Dependent Role="Lectern">
+        <PropertyRef Name="Id_Faculty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Position_Degree">
+    <End Role="Degree" Type="Self.Degree" Multiplicity="0..1" />
+    <End Role="Position" Type="Self.Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Degree">
+        <PropertyRef Name="Id_degree" />
+      </Principal>
+      <Dependent Role="Position">
+        <PropertyRef Name="Id_Degree" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_To_Spec">
+    <End Role="Specs" Type="Self.Specs" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specs">
+        <PropertyRef Name="Id_Spec" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="Id_Spec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_To_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id_Subject" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="Id_Subject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Specs_To_Lectern">
+    <End Role="Lectern" Type="Self.Lectern" Multiplicity="0..1" />
+    <End Role="Specs" Type="Self.Specs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lectern">
+        <PropertyRef Name="Id_Lectern" />
+      </Principal>
+      <Dependent Role="Specs">
+        <PropertyRef Name="Id_Lectern" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_To_Spec">
+    <End Role="Specs" Type="Self.Specs" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specs">
+        <PropertyRef Name="Id_Spec" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Id_Spec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_To_Lectern">
+    <End Role="Lectern" Type="Self.Lectern" Multiplicity="0..1" />
+    <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lectern">
+        <PropertyRef Name="Id_Lectern" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="Id_Lectern" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Uchebka_SSModelContainer">
+    <EntitySet Name="Degree" EntityType="Self.Degree" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Examen" EntityType="Self.Examen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lectern" EntityType="Self.Lectern" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specs" EntityType="Self.Specs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_To_Chief" Association="Self.FK_Employee_To_Chief">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Employee1" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_To_Lectern" Association="Self.FK_Employee_To_Lectern">
+      <End Role="Lectern" EntitySet="Lectern" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_To_Employee" Association="Self.FK_Exam_To_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_To_Student" Association="Self.FK_Exam_To_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_To_Subject" Association="Self.FK_Exam_To_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lectern_To_Faculty" Association="Self.FK_Lectern_To_Faculty">
+      <End Role="Faculty" EntitySet="Faculty" />
+      <End Role="Lectern" EntitySet="Lectern" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Position_Degree" Association="Self.FK_Position_Degree">
+      <End Role="Degree" EntitySet="Degree" />
+      <End Role="Position" EntitySet="Position" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_To_Spec" Association="Self.FK_Request_To_Spec">
+      <End Role="Specs" EntitySet="Specs" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_To_Subject" Association="Self.FK_Request_To_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Specs_To_Lectern" Association="Self.FK_Specs_To_Lectern">
+      <End Role="Lectern" EntitySet="Lectern" />
+      <End Role="Specs" EntitySet="Specs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_To_Spec" Association="Self.FK_Student_To_Spec">
+      <End Role="Specs" EntitySet="Specs" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_To_Lectern" Association="Self.FK_Subject_To_Lectern">
+      <End Role="Lectern" EntitySet="Lectern" />
+      <End Role="Subject" EntitySet="Subject" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
