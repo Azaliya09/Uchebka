@@ -29,8 +29,6 @@ namespace Uchebnaya_Azaliya.Pages
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.RemoveBackEntry();
-            App.IsAdmin = false;
-            App.IsEmployee = false;
             if (PasswordPb.Password == "0000")
             {
                 App.IsAdmin = true;
@@ -41,14 +39,13 @@ namespace Uchebnaya_Azaliya.Pages
             {
                 App.IsEmployee = true;
                 MessageBox.Show("Вы вошли как сотрудник!");
-                Navigation.NextPage(new PageComponent("Добро пожаловать!", new StudentPage()));//подключить к этому листвью ExamenPage
+                Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListExamenPage()));
             }
             else
             {
-                App.IsAdmin = false;
-                App.IsEmployee = false;
+                App.IsStudent = true;
                 MessageBox.Show("Вы вошли как студент!");
-                Navigation.NextPage(new PageComponent("Добро пожаловать!", new StudentPage()));//подключить к этому листвью SubjectPage
+                Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListSubjectPage()));
             }
         }
     }

@@ -17,15 +17,20 @@ using Uchebnaya_Azaliya.Base;
 namespace Uchebnaya_Azaliya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SubjectPage.xaml
+    /// Логика взаимодействия для StudentPage.xaml
     /// </summary>
-    public partial class SubjectPage : Page
+    public partial class ListExamenPage : Page
     {
-        public SubjectPage()
+        public ListExamenPage()
         {
             InitializeComponent();
+            MarksList.ItemsSource = App.db.Examen.ToList();
+            if (App.IsAdmin == false)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
         }
-        private void SubjectList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MarksList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

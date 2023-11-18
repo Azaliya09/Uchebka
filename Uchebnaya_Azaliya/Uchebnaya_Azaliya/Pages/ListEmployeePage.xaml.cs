@@ -23,6 +23,11 @@ namespace Uchebnaya_Azaliya.Pages
         public ListEmployeePage()
         {
             InitializeComponent();
+            EmployeeList.ItemsSource = App.db.Employee.ToList();
+            if (App.IsAdmin == false)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

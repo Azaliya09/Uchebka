@@ -9,6 +9,45 @@
       Title="ListEmployeePage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="61*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+
+            <ComboBox HorizontalAlignment="Left" Margin="15 0"  x:Name="SortCb" >
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>В алфавитном порядке</ComboBoxItem>
+                <ComboBoxItem>В обратном порядке</ComboBoxItem>
+            </ComboBox>
+            <TextBlock>Фильтр:</TextBlock>
+            <ComboBox x:Name="FilterMarkCb" Margin="15 0"  >
+                <ComboBoxItem Content="все"/>
+                <ComboBoxItem Content="отличники"/>
+                <ComboBoxItem Content="хорошисты"/>
+                <ComboBoxItem Content="ударники"/>
+            </ComboBox>
+
+            <TextBox x:Name="SearchTb" ></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListView x:Name="EmployeeList">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="120" Header="Код сотрудника" DisplayMemberBinding="{Binding Id_Employee}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="ФИО" DisplayMemberBinding="{Binding Surname}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Должность" DisplayMemberBinding="{Binding Position.Position1}"></GridViewColumn>
+                        <GridViewColumn Width="120" Header="Оклад" DisplayMemberBinding="{Binding Salary}"></GridViewColumn>
+                        <GridViewColumn Width="120" Header="Стаж" DisplayMemberBinding="{Binding Stage}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Height="30"  x:Name="AddBtn">Добавить / удалить записи</Button>
+        </StackPanel>
     </Grid>
 </Page>

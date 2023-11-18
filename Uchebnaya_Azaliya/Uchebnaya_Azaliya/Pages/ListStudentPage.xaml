@@ -9,14 +9,44 @@
       Title="ListStudentPage">
 
     <Grid>
-        <ListView x:Name="ListStudentList" SelectionChanged="ListStudentList_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="150" Header="Код студента" DisplayMemberBinding="{Binding Student.Id_Student}"></GridViewColumn>
-                    <GridViewColumn Width="150" Header="Специальность" DisplayMemberBinding="{Binding Student.Id_Spec}"></GridViewColumn>
-                    <GridViewColumn Width="150" Header="ФИО" DisplayMemberBinding="{Binding Student.Surname_Student}"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="61*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+
+            <ComboBox HorizontalAlignment="Left" Margin="15 0"  x:Name="SortCb" >
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>В алфавитном порядке</ComboBoxItem>
+                <ComboBoxItem>В обратном порядке</ComboBoxItem>
+            </ComboBox>
+            <TextBlock>Фильтр:</TextBlock>
+            <ComboBox x:Name="FilterMarkCb" Margin="15 0"  >
+                <ComboBoxItem Content="все"/>
+                <ComboBoxItem Content="отличники"/>
+                <ComboBoxItem Content="хорошисты"/>
+                <ComboBoxItem Content="ударники"/>
+            </ComboBox>
+
+            <TextBox x:Name="SearchTb" ></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListView x:Name="ListStudentList" SelectionChanged="ListStudentList_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="150" Header="Код студента" DisplayMemberBinding="{Binding Id_Student}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Специальность" DisplayMemberBinding="{Binding Specs.Direction}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="ФИО" DisplayMemberBinding="{Binding Surname_Student}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button  Height="30"  x:Name="AddBtn">Добавить / удалить записи</Button>
+        </StackPanel>
+       
     </Grid>
 </Page>

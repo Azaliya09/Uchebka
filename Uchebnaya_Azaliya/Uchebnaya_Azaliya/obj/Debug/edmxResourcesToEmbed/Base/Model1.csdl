@@ -106,16 +106,6 @@
     <NavigationProperty Name="Lectern" Relationship="Self.FK_Subject_To_Lectern" FromRole="Subject" ToRole="Lectern" />
     <NavigationProperty Name="Specs" Relationship="Self.Request" FromRole="Subject" ToRole="Specs" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <Association Name="FK_Position_Degree">
     <End Role="Degree" Type="Self.Degree" Multiplicity="0..1" />
     <End Role="Position" Type="Self.Position" Multiplicity="*" />
@@ -252,7 +242,7 @@
     <End Role="Specs" Type="Self.Specs" Multiplicity="*" />
     <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="Uchebka_SSEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Uchebka_SSEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Degree" EntityType="Self.Degree" />
     <EntitySet Name="Employee" EntityType="Self.Employee" />
     <EntitySet Name="Examen" EntityType="Self.Examen" />
@@ -262,7 +252,6 @@
     <EntitySet Name="Specs" EntityType="Self.Specs" />
     <EntitySet Name="Student" EntityType="Self.Student" />
     <EntitySet Name="Subject" EntityType="Self.Subject" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <AssociationSet Name="FK_Position_Degree" Association="Self.FK_Position_Degree">
       <End Role="Degree" EntitySet="Degree" />
       <End Role="Position" EntitySet="Position" />

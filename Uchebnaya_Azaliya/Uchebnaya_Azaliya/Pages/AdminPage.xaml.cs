@@ -24,5 +24,22 @@ namespace Uchebnaya_Azaliya.Pages
         {
             InitializeComponent();
         }
+
+        private void ExamenBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListExamenPage()));
+        }
+        private void SubjectBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListSubjectPage()));
+        }
+        private void StudentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListStudentPage()));
+        }
+        private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListEmployeePage()));
+        }
     }
 }

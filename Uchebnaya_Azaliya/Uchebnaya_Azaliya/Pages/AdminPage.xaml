@@ -13,10 +13,10 @@
             <TextBlock HorizontalAlignment="Center">Выберите лист, в который хотите перейти</TextBlock>
             <TextBlock HorizontalAlignment="Center">↓</TextBlock>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button>Экзамен</Button>
-                <Button>Дисициплины</Button>
-                <Button>Студенты</Button>
-                <Button>Сотрудники</Button>
+                <Button x:Name="ExamenBtn" Click="ExamenBtn_Click">Экзамен</Button>
+                <Button x:Name="SubjectBtn" Click="SubjectBtn_Click">Дисициплины</Button>
+                <Button x:Name="StudentBtn" Click="StudentBtn_Click">Студенты</Button>
+                <Button x:Name="EmployeeBtn" Click="EmployeeBtn_Click">Сотрудники</Button>
             </StackPanel>
             
         </StackPanel>

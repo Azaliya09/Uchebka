@@ -17,6 +17,8 @@ namespace Uchebnaya_Azaliya.Pages
         public static void ClearHistory()
         {
             App.IsAdmin = false;
+            App.IsEmployee = false;
+            App.IsStudent = false;
             components.Clear();
         }
 
@@ -24,7 +26,7 @@ namespace Uchebnaya_Azaliya.Pages
         {
             mainWindow.TitleTb.Text = pageComponent.Title;
             mainWindow.BackBTN.Visibility = components.Count() > 1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-            mainWindow.ExitBTN.Visibility = App.IsAdmin ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            mainWindow.ExitBTN.Visibility = App.IsAdmin || App.IsEmployee || App.IsStudent ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             mainWindow.MyFrame.Navigate(pageComponent.Page);
         }
         public static void NextPage(PageComponent pageComponent)

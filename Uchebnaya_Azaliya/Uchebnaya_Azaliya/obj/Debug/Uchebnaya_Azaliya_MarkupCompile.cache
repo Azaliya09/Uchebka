@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\App.xaml
-8484959703
+7879096625
 2-2013652905
-271358841192
+24-1969405080
 18-1706958305
-MainWindow.xaml;Pages\AdminPage.xaml;Pages\AuthorizatePage.xaml;Pages\ExamenPage.xaml;Pages\ListEmployeePage.xaml;Pages\ListStudentPage.xaml;Pages\StudentPage.xaml;Pages\SubjectPage.xaml;
+MainWindow.xaml;Pages\AdminPage.xaml;Pages\AuthorizatePage.xaml;Pages\ListEmployeePage.xaml;Pages\ListStudentPage.xaml;Pages\ListExamenPage.xaml;Pages\ListSubjectPage.xaml;
 
-True
+False
 

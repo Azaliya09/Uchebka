@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="60777d0de60c4ae0877a3c86e193a39b" Name="Diagram1">
+      <Diagram DiagramId="3c0b701cb04d4aac9554e8973c8a523e" Name="Diagram1">
         <EntityTypeShape EntityType="Uchebka_SSModel.Degree" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Uchebka_SSModel.Employee" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Uchebka_SSModel.Examen" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="Uchebka_SSModel.Specs" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Uchebka_SSModel.Student" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Uchebka_SSModel.Subject" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="Uchebka_SSModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Uchebka_SSModel.FK_Position_Degree" ManuallyRouted="false" />
         <AssociationConnector Association="Uchebka_SSModel.FK_Employee_Position" ManuallyRouted="false" />
         <AssociationConnector Association="Uchebka_SSModel.FK_Employee_To_Chief" ManuallyRouted="false" />

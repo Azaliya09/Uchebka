@@ -17,18 +17,15 @@ using Uchebnaya_Azaliya.Base;
 namespace Uchebnaya_Azaliya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для StudentPage.xaml
+    /// Логика взаимодействия для SubjectPage.xaml
     /// </summary>
-    public partial class StudentPage : Page
+    public partial class ListSubjectPage : Page
     {
-        public StudentPage()
+        public ListSubjectPage()
         {
             InitializeComponent();
-            Navigation.NextPage(new PageComponent("Экзамен", new ExamenPage()));
-            if (App.IsAdmin == false)
-            {
-                AddBtn.Visibility = Visibility.Hidden;
-            }
+            ListSubjectList.ItemsSource = App.db.Subject.ToList();
         }
+        
     }
 }

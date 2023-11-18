@@ -23,6 +23,11 @@ namespace Uchebnaya_Azaliya.Pages
         public ListStudentPage()
         {
             InitializeComponent();
+            ListStudentList.ItemsSource = App.db.Student.ToList();
+            if (App.IsAdmin == false)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+            }
         }
         private void ListStudentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
