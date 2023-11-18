@@ -15,7 +15,7 @@
         <Rectangle Fill="#a0d2eb" Grid.ColumnSpan="2"></Rectangle>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="/Resources/logo.png"  Grid.ColumnSpan="2"/>
-            <TextBlock  FontSize="25" HorizontalAlignment="Center" x:Name="TitleTb" Height="35"  TextAlignment="Center">Электронный дневник</TextBlock>
+            <TextBlock  FontSize="25" HorizontalAlignment="Center" x:Name="TitleTb" Height="35"  TextAlignment="Center"></TextBlock>
         </StackPanel>
         
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.ColumnSpan="2">

@@ -16,6 +16,7 @@ namespace Uchebnaya_Azaliya
     {
         public static Uchebka_SSEntities db = new Uchebka_SSEntities();
         public static bool IsAdmin = false;
-        public static bool IsTeacher = false;
+        public static bool IsEmployee = false;
+
     }
 }

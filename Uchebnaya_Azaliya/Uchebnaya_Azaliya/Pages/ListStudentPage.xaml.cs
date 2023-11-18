@@ -12,20 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Uchebnaya_Azaliya.Base;
 
 namespace Uchebnaya_Azaliya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SubjectPage.xaml
+    /// Логика взаимодействия для ListStudentPage.xaml
     /// </summary>
-    public partial class SubjectPage : Page
+    public partial class ListStudentPage : Page
     {
-        public SubjectPage()
+        public ListStudentPage()
         {
             InitializeComponent();
         }
-        private void SubjectList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListStudentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

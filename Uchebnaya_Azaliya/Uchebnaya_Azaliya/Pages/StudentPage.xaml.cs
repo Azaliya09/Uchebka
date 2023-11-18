@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Uchebnaya_Azaliya.Base;
 
 namespace Uchebnaya_Azaliya.Pages
 {
@@ -23,7 +24,7 @@ namespace Uchebnaya_Azaliya.Pages
         public StudentPage()
         {
             InitializeComponent();
-            Navigation.NextPage(new PageComponent("hghghghg", new ExamenPage()));
+            Navigation.NextPage(new PageComponent("Экзамен", new ExamenPage()));
             if (App.IsAdmin == false)
             {
                 AddBtn.Visibility = Visibility.Hidden;

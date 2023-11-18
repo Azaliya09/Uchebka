@@ -11,15 +11,8 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center">Необходимо войти в систему</TextBlock>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock>Логин: </TextBlock>
-                <TextBox x:Name="LoginTb" Margin="5" Height="30"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock>Пароль:</TextBlock>
-                <PasswordBox x:Name="PasswordPb"  Margin="5" Height="30"></PasswordBox>
-            </StackPanel>
-            <Button x:Name="EnterBtn" Click="EnterBtn_Click">Войти</Button>
+            <PasswordBox x:Name="PasswordPb"  Margin="5" Height="30"></PasswordBox>
+            <Button Width="180" x:Name="EnterBtn" Click="EnterBtn_Click">Войти</Button>
         </StackPanel>
     </Grid>
 </Page>

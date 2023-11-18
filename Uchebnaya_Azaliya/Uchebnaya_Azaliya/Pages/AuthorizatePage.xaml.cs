@@ -23,23 +23,33 @@ namespace Uchebnaya_Azaliya.Pages
         public AuthorizatePage()
         {
             InitializeComponent();
+            
         }
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.RemoveBackEntry();
             App.IsAdmin = false;
+            App.IsEmployee = false;
             if (PasswordPb.Password == "0000")
             {
                 App.IsAdmin = true;
                 MessageBox.Show("Вы вошли как администратор!");
+                Navigation.NextPage(new PageComponent("Добро пожаловать!", new AdminPage()));
+            }
+            else if(PasswordPb.Password == "1111")
+            {
+                App.IsEmployee = true;
+                MessageBox.Show("Вы вошли как сотрудник!");
+                Navigation.NextPage(new PageComponent("Добро пожаловать!", new StudentPage()));//подключить к этому листвью ExamenPage
             }
             else
             {
                 App.IsAdmin = false;
+                App.IsEmployee = false;
                 MessageBox.Show("Вы вошли как студент!");
+                Navigation.NextPage(new PageComponent("Добро пожаловать!", new StudentPage()));//подключить к этому листвью SubjectPage
             }
-            Navigation.NextPage(new PageComponent("", new StudentPage()));
         }
     }
 }

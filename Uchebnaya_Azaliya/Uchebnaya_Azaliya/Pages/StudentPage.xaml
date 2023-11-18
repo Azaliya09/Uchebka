@@ -19,17 +19,15 @@
 
             <ComboBox HorizontalAlignment="Left" Margin="15 0"  x:Name="SortCb" >
                 <ComboBoxItem>По умолчанию</ComboBoxItem>
-                <ComboBoxItem>По убыванию</ComboBoxItem>
-                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>В алфавитном порядке</ComboBoxItem>
+                <ComboBoxItem>В обратном порядке</ComboBoxItem>
             </ComboBox>
             <TextBlock>Фильтр:</TextBlock>
-            <ComboBox x:Name="FilterDiscountCb" Margin="15 0"  >
+            <ComboBox x:Name="FilterMarkCb" Margin="15 0"  >
                 <ComboBoxItem Content="все"/>
-                <ComboBoxItem Content="от 0% до 5%"/>
-                <ComboBoxItem Content="от 5% до 15%"/>
-                <ComboBoxItem Content="от 15% до 30%"/>
-                <ComboBoxItem Content="от 30% до 70%"/>
-                <ComboBoxItem Content="от 70% до 100%"/>
+                <ComboBoxItem Content="отличники"/>
+                <ComboBoxItem Content="хорошисты"/>
+                <ComboBoxItem Content="ударинки"/>
             </ComboBox>
 
             <TextBox x:Name="SearchTb" ></TextBox>

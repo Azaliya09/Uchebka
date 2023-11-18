@@ -12,22 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Uchebnaya_Azaliya.Base;
 
 namespace Uchebnaya_Azaliya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SubjectPage.xaml
+    /// Логика взаимодействия для AdminPage.xaml
     /// </summary>
-    public partial class SubjectPage : Page
+    public partial class AdminPage : Page
     {
-        public SubjectPage()
+        public AdminPage()
         {
             InitializeComponent();
-        }
-        private void SubjectList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
