@@ -37,7 +37,7 @@
             <ListView x:Name="MarksList">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="120" Header="Дата экзамена" DisplayMemberBinding="{Binding Date_Examen, StringFormat='dd-MM-yyyy'}"></GridViewColumn>
+                        <GridViewColumn Width="120" Header="Дата экзамена" DisplayMemberBinding="{Binding Date_Examen}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Предмет" DisplayMemberBinding="{Binding Subject.Name_Subject}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Студент" DisplayMemberBinding="{Binding Student.Surname_Student}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Преподаватель" DisplayMemberBinding="{Binding Employee.Surname}"></GridViewColumn>

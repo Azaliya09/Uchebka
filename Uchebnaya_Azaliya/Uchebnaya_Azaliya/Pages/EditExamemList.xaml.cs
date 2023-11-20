@@ -33,9 +33,16 @@ namespace Uchebnaya_Azaliya.Pages
             StudentCb.ItemsSource = App.db.Student.ToList(); 
             EmployeeCb.ItemsSource = App.db.Employee.ToList();
             if (New != true)
+            {
                 DateDp.SelectedDate = examen.Date_Examen;
+                DateDp.IsEnabled = false;
+            }
             else
+            {
                 DateDp.SelectedDate = DateTime.Now;
+                DateDp.IsEnabled = true;
+            }
+                
             SubjectCb.SelectedItem = examen.Subject;
             StudentCb.SelectedItem = examen.Student;
             EmployeeCb.SelectedItem = examen.Employee;
@@ -56,16 +63,14 @@ namespace Uchebnaya_Azaliya.Pages
                 var _examen = App.db.Examen.Where(x => x.Date_Examen == examen.Date_Examen && x.Id_Student == examen.Id_Student).FirstOrDefault();
                 if(_examen != null)
                 {
-                    _examen.Date_Examen = Convert.ToDateTime(DateDp.SelectedDate);
+                    _examen.Date_Examen = Convert.ToDateTime(DateDp.SelectedDate).Date;
                     _examen.Id_Subject = (SubjectCb.SelectedItem as Subject).Id_Subject;
                     _examen.Id_Student = (StudentCb.SelectedItem as Student).Id_Student;
                     _examen.Id_Employee = (EmployeeCb.SelectedItem as Employee).Id_Employee;
                     _examen.Auditory = AuditoryTb.Text;
                     _examen.Mark = Convert.ToInt32(MarkTb.Text);
                 }
-                
             }
-            
             App.db.SaveChanges();
             MessageBox.Show("Сохранено!");
             Navigation.NextPage(new PageComponent("Экзамен", new ListExamenPage()));

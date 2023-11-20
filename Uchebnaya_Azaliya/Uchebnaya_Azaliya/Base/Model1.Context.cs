@@ -13,10 +13,10 @@ namespace Uchebnaya_Azaliya.Base
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Uchebka_SSEntities1 : DbContext
+    public partial class Uchebka_SSEntities2 : DbContext
     {
-        public Uchebka_SSEntities1()
-            : base("name=Uchebka_SSEntities1")
+        public Uchebka_SSEntities2()
+            : base("name=Uchebka_SSEntities2")
         {
         }
     
@@ -34,5 +34,6 @@ namespace Uchebnaya_Azaliya.Base
         public virtual DbSet<Specs> Specs { get; set; }
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Subject> Subject { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

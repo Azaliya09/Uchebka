@@ -12,17 +12,12 @@ namespace Uchebnaya_Azaliya.Base
     using System;
     using System.Collections.Generic;
     
-    public partial class Examen
+    public partial class sysdiagrams
     {
-        public System.DateTime Date_Examen { get; set; }
-        public int Id_Subject { get; set; }
-        public int Id_Student { get; set; }
-        public Nullable<int> Id_Employee { get; set; }
-        public string Auditory { get; set; }
-        public Nullable<int> Mark { get; set; }
-    
-        public virtual Employee Employee { get; set; }
-        public virtual Student Student { get; set; }
-        public virtual Subject Subject { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

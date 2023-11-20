@@ -14,7 +14,7 @@ namespace Uchebnaya_Azaliya
     /// </summary>
     public partial class App : Application
     {
-        public static Uchebka_SSEntities1 db = new Uchebka_SSEntities1();
+        public static Uchebka_SSEntities2 db = new Uchebka_SSEntities2();
         public static bool IsAdmin = false;
         public static bool IsEmployee = false;
         public static bool IsStudent = false;
