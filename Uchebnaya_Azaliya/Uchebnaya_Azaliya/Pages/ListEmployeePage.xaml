@@ -17,20 +17,14 @@
 
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="5 0">Сортировка:</TextBlock>
-            <ComboBox HorizontalAlignment="Left" Margin="5 0"  x:Name="SortCb" >
+            <ComboBox HorizontalAlignment="Left" Margin="5 0"  x:Name="SortCb" SelectionChanged="SortCb_SelectionChanged">
                 <ComboBoxItem>По умолчанию</ComboBoxItem>
-                <ComboBoxItem>В алфавитном порядке</ComboBoxItem>
-                <ComboBoxItem>В обратном порядке</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
             </ComboBox>
-            <TextBlock>Фильтр:</TextBlock>
-            <ComboBox x:Name="FilterMarkCb" Margin="5 0"  >
-                <ComboBoxItem Content="все"/>
-                <ComboBoxItem Content="отличники"/>
-                <ComboBoxItem Content="хорошисты"/>
-                <ComboBoxItem Content="ударники"/>
-            </ComboBox>
+            
             <TextBlock>Поиск:</TextBlock>
-            <TextBox x:Name="SearchTb" ></TextBox>
+            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged"></TextBox>
         </StackPanel>
         
         <StackPanel Grid.Row="1">

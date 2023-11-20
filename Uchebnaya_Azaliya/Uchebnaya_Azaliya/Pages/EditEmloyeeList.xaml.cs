@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 using Uchebnaya_Azaliya.Base;
 
 namespace Uchebnaya_Azaliya.Pages
@@ -22,20 +23,52 @@ namespace Uchebnaya_Azaliya.Pages
     public partial class EditEmloyeeList : Page
     {
         private Employee employee;
+        private bool New;
         public EditEmloyeeList(Employee _employee)
         {
             InitializeComponent();
             employee = _employee;
+            if (employee.Id_Employee == null || employee.Id_Employee == 0)
+                New = true;
             PositionCb.ItemsSource = App.db.Position.ToList();
-            if (employee.Id_Employee == 0)
-                IdTb.IsEnabled = true;
-            else
+            if (New != true)
+            {
+                IdTb.Text = employee.Id_Employee.ToString();
                 IdTb.IsEnabled = false;
-            
+            }
+            else
+            {
+                IdTb.IsEnabled = true;
+            }
+
             IdTb.Text = employee.Id_Employee.ToString();
             NameTb.Text = employee.Surname;
             PositionCb.SelectedItem = employee.Position;
             SalaryTb.Text = employee.Salary.ToString();
+        }
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (IdTb.Text == "" || NameTb.Text == "" || PositionCb.SelectedItem == null || SalaryTb.Text == "")
+            {
+                MessageBox.Show("Вы не заполнили все поля!!");
+                return;
+            }
+            if (New)
+                App.db.Employee.Add(employee);
+            else
+            {
+                var _employee = App.db.Employee.Where(x => x.Id_Employee == employee.Id_Employee).FirstOrDefault();
+                if (_employee != null)
+                {
+                    _employee.Id_Employee = Convert.ToInt32(IdTb.Text);
+                    _employee.Surname = NameTb.Text;
+                    _employee.Id_Position = Convert.ToInt32((PositionCb.SelectedItem as Position).Position1);
+                    _employee.Salary = Convert.ToInt32(SalaryTb.Text);
+                }
+            }
+            App.db.SaveChanges();
+            MessageBox.Show("Сохранено!");
+            Navigation.NextPage(new PageComponent("Сотрудники", new ListEmployeePage()));
         }
     }
 }

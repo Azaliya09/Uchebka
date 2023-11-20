@@ -12,7 +12,7 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Код студента</TextBlock>
-                <TextBox Width="200" IsEnabled="False" x:Name="IdTb"></TextBox>
+                <TextBox Width="200" x:Name="IdTb"></TextBox>
             </StackPanel>
             <StackPanel Margin="3 0" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Margin="0 0 3 0">Специальность</TextBlock>
@@ -22,7 +22,7 @@
                 <TextBlock>ФИО</TextBlock>
                 <TextBox Width="200" x:Name="NameTb"></TextBox>
             </StackPanel>
-            <Button Width="100" x:Name="SaveBtn">Сохранить</Button>
+            <Button Width="100" x:Name="SaveBtn"  Click="SaveBtn_Click">Сохранить</Button>
         </StackPanel>
     </Grid>
 </Page>

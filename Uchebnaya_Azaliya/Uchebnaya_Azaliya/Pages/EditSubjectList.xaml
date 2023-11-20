@@ -20,9 +20,9 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Код</TextBlock>
-                <TextBox Width="200" IsEnabled="False" x:Name="IdTb"></TextBox>
+                <TextBox Width="200" x:Name="IdTb"></TextBox>
             </StackPanel>
-            <Button Width="100" x:Name="SaveBtn">Сохранить</Button>
+            <Button Width="100" x:Name="SaveBtn"  Click="SaveBtn_Click">Сохранить</Button>
         </StackPanel>
     </Grid>
 </Page>

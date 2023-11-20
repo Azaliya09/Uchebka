@@ -46,7 +46,45 @@ namespace Uchebnaya_Azaliya.Pages
         }
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            Employee employee = EmployeeList.SelectedItem as Employee;
+            if (employee != null)
+            {
+                App.db.Employee.Remove(employee);
+                App.db.SaveChanges();
+                EmployeeList.ItemsSource = App.db.Employee.ToList();
+            }
+        }
+        public void Refresh()
+        {
+            IEnumerable<Employee> Sort = App.db.Employee;
+            if (SortCb.SelectedIndex == 0)
+            {
+                Sort = Sort;
+            }
+            else if (SortCb.SelectedIndex == 1)
+            {
+                Sort = Sort.OrderBy(x => x.Id_Employee);
+            }
+            else if (SortCb.SelectedIndex == 2)
+            {
+                Sort = Sort.OrderByDescending(x => x.Id_Employee);
+            }
 
+            if (SearchTb.Text != null)
+            {
+                Sort = Sort.Where(x => x.Surname.ToLower().Contains(SearchTb.Text.ToLower()));
+            }
+
+            EmployeeList.ItemsSource = Sort.ToList();
+        }
+
+        private void SortCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refresh();
+        }
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
         }
     }
 }
