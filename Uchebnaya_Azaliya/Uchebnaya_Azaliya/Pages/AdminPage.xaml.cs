@@ -27,19 +27,19 @@ namespace Uchebnaya_Azaliya.Pages
 
         private void ExamenBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListExamenPage()));
+            Navigation.NextPage(new PageComponent("Экзамен", new ListExamenPage()));
         }
         private void SubjectBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListSubjectPage()));
+            Navigation.NextPage(new PageComponent("Дисциплины", new ListSubjectPage()));
         }
         private void StudentBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListStudentPage()));
+            Navigation.NextPage(new PageComponent("Студенты", new ListStudentPage()));
         }
         private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Добро пожаловать!", new ListEmployeePage()));
+            Navigation.NextPage(new PageComponent("Сотрудники", new ListEmployeePage()));
         }
     }
 }

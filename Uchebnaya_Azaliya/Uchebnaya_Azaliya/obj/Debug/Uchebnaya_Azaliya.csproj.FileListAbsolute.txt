@@ -65,3 +65,11 @@ C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Page
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\ListExamenPage.baml
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\ListSubjectPage.g.cs
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\ListSubjectPage.baml
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditEmloyeeList.g.cs
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditExamemList.g.cs
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditEmloyeeList.baml
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditExamemList.baml
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditStudentList.g.cs
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditSubjectList.g.cs
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditStudentList.baml
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditSubjectList.baml

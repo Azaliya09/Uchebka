@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Uchebnaya_Azaliya.Base;
 
 namespace Uchebnaya_Azaliya.Pages
 {
@@ -27,7 +28,25 @@ namespace Uchebnaya_Azaliya.Pages
             if (App.IsAdmin == false)
             {
                 AddBtn.Visibility = Visibility.Hidden;
+                EditBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
             }
+        }
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Employee employee = new Employee();
+            Navigation.NextPage(new PageComponent("Добавление новой записи", new EditEmloyeeList(employee)));
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Employee employee = EmployeeList.SelectedItem as Employee;
+            if (employee != null)
+                Navigation.NextPage(new PageComponent("Редактирование записи", new EditEmloyeeList(employee)));
+        }
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

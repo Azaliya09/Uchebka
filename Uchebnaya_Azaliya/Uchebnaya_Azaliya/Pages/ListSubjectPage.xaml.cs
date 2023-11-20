@@ -25,7 +25,30 @@ namespace Uchebnaya_Azaliya.Pages
         {
             InitializeComponent();
             ListSubjectList.ItemsSource = App.db.Subject.ToList();
+            if (App.IsAdmin == false)
+            {
+                AddBtn.Visibility = Visibility.Hidden;
+                EditBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+            }
         }
-        
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Subject subject = new Subject();
+            Navigation.NextPage(new PageComponent("Добавление новой записи", new EditSubjectList(subject)));
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Subject subject = ListSubjectList.SelectedItem as Subject;
+            if (subject != null)
+                Navigation.NextPage(new PageComponent("Редактирование записи", new EditSubjectList(subject)));
+
+        }
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

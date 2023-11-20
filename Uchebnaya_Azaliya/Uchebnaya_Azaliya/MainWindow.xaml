@@ -5,24 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Uchebnaya_Azaliya"
         mc:Ignorable="d"
-        Title="Электронный дневник" Height="450" Width="800">
+        Title="Сирачова Азалия 321П" Height="450" Width="800">
+        <Window.Background>
+        <ImageBrush ImageSource="/Resources/fon.jpg"/>
+        </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="61*"/>
             <RowDefinition Height="373*"/>
         </Grid.RowDefinitions>
 
-        <Rectangle Fill="#a0d2eb" Grid.ColumnSpan="2"></Rectangle>
+        <Rectangle Fill="#8458b3" Grid.ColumnSpan="2"></Rectangle>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="/Resources/logo.png"  Grid.ColumnSpan="2"/>
-            <TextBlock  FontSize="25" HorizontalAlignment="Center" x:Name="TitleTb" Height="35"  TextAlignment="Center"></TextBlock>
+            <Image Margin="8" Source="/Resources/logo.png"  Grid.ColumnSpan="2"/>
+            <TextBlock Foreground="White"  FontSize="25" HorizontalAlignment="Center" x:Name="TitleTb" Height="35"  TextAlignment="Center"></TextBlock>
         </StackPanel>
         
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.ColumnSpan="2">
-            <Button Width="80" Margin="5"  x:Name="BackBTN" Click="BackBTN_Click">Назад</Button>
-            <Button Width="80" x:Name="ExitBTN" Click="ExitBTN_Click">Выход</Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.ColumnSpan="2">
+            <Button BorderThickness="2" BorderBrush="White" Width="80" Margin="5"  x:Name="BackBTN" Click="BackBTN_Click">Назад</Button>
+            <Button BorderThickness="2" BorderBrush="White" Width="80" x:Name="ExitBTN" Click="ExitBTN_Click">Выход</Button>
         </StackPanel>
 
-        <Frame x:Name="MyFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+        <Frame   x:Name="MyFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

@@ -16,27 +16,28 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-
-            <ComboBox HorizontalAlignment="Left" Margin="15 0"  x:Name="SortCb" >
+            <TextBlock Margin="5 0">Сортировка:</TextBlock>
+            <ComboBox HorizontalAlignment="Left" Margin="5 0"  x:Name="SortCb" SelectionChanged="SortCb_SelectionChanged_1">
                 <ComboBoxItem>По умолчанию</ComboBoxItem>
-                <ComboBoxItem>В алфавитном порядке</ComboBoxItem>
-                <ComboBoxItem>В обратном порядке</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
             </ComboBox>
             <TextBlock>Фильтр:</TextBlock>
-            <ComboBox x:Name="FilterMarkCb" Margin="15 0"  >
+            <ComboBox x:Name="FilterCb" Margin="5 0" SelectionChanged="FilterCb_SelectionChanged"  >
                 <ComboBoxItem Content="все"/>
                 <ComboBoxItem Content="отличники"/>
                 <ComboBoxItem Content="хорошисты"/>
                 <ComboBoxItem Content="ударники"/>
             </ComboBox>
-
-            <TextBox x:Name="SearchTb" ></TextBox>
+            <TextBlock>Поиск:</TextBlock>
+            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" ></TextBox>
         </StackPanel>
+        
         <StackPanel Grid.Row="1">
-            <ListView x:Name="MarksList" SelectionChanged="MarksList_SelectionChanged">
+            <ListView x:Name="MarksList">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="120" Header="Дата экзамена" DisplayMemberBinding="{Binding Date_Examen}"></GridViewColumn>
+                        <GridViewColumn Width="120" Header="Дата экзамена" DisplayMemberBinding="{Binding Date_Examen, StringFormat='dd-MM-yyyy'}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Предмет" DisplayMemberBinding="{Binding Subject.Name_Subject}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Студент" DisplayMemberBinding="{Binding Student.Surname_Student}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Преподаватель" DisplayMemberBinding="{Binding Employee.Surname}"></GridViewColumn>
@@ -46,10 +47,11 @@
                 </ListView.View>
             </ListView>
         </StackPanel>
-        
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button  Height="30"  x:Name="AddBtn">Добавить / удалить записи</Button>
+        <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center">
+            <Button  Height="30" Width="170" x:Name="EditBtn" Click="EditBtn_Click">Редактировать запись</Button>
+            <Button  Height="30" Width="135" x:Name="AddBtn" Click="AddBtn_Click">Добавить запись</Button>
+            <Button  Height="30" Width="125" x:Name="DeleteBtn" Click="DeleteBtn_Click">Удалить запись</Button>
         </StackPanel>
     </Grid>
 </Page>

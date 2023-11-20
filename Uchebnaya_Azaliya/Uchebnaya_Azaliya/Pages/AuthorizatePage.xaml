@@ -12,7 +12,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center">Необходимо войти в систему</TextBlock>
             <PasswordBox x:Name="PasswordPb"  Margin="5" Height="30"></PasswordBox>
-            <Button Width="180" x:Name="EnterBtn" Click="EnterBtn_Click">Войти</Button>
+            <Button Width="80" x:Name="EnterBtn" Click="EnterBtn_Click">Войти</Button>
         </StackPanel>
     </Grid>
 </Page>

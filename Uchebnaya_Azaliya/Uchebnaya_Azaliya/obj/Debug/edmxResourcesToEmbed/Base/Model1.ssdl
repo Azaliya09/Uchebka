@@ -25,7 +25,7 @@
       <PropertyRef Name="Date_Examen" />
       <PropertyRef Name="Id_Student" />
     </Key>
-    <Property Name="Date_Examen" Type="date" Nullable="false" />
+    <Property Name="Date_Examen" Type="datetime" Nullable="false" />
     <Property Name="Id_Subject" Type="int" />
     <Property Name="Id_Student" Type="int" Nullable="false" />
     <Property Name="Id_Employee" Type="int" />
@@ -52,7 +52,7 @@
       <PropertyRef Name="Id_Position" />
     </Key>
     <Property Name="Id_Position" Type="int" Nullable="false" />
-    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="Position" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id_Degree" Type="int" />
   </EntityType>
   <EntityType Name="Request">

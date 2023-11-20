@@ -126,6 +126,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EditEmloyeeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditExamemList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditStudentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditSubjectList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ListEmployeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +165,18 @@
     </Compile>
     <Compile Include="Pages\AuthorizatePage.xaml.cs">
       <DependentUpon>AuthorizatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditEmloyeeList.xaml.cs">
+      <DependentUpon>EditEmloyeeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditExamemList.xaml.cs">
+      <DependentUpon>EditExamemList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditStudentList.xaml.cs">
+      <DependentUpon>EditStudentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditSubjectList.xaml.cs">
+      <DependentUpon>EditSubjectList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListEmployeePage.xaml.cs">
       <DependentUpon>ListEmployeePage.xaml</DependentUpon>
@@ -200,9 +228,6 @@
     <Folder Include="Components\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +241,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\fon.jpg" />
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

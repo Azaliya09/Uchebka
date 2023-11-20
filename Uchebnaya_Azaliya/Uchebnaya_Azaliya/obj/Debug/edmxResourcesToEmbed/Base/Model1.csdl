@@ -31,7 +31,7 @@
       <PropertyRef Name="Date_Examen" />
       <PropertyRef Name="Id_Student" />
     </Key>
-    <Property Name="Date_Examen" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Date_Examen" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Id_Subject" Type="Int32" />
     <Property Name="Id_Student" Type="Int32" Nullable="false" />
     <Property Name="Id_Employee" Type="Int32" />
@@ -66,7 +66,7 @@
       <PropertyRef Name="Id_Position" />
     </Key>
     <Property Name="Id_Position" Type="Int32" Nullable="false" />
-    <Property Name="Position1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Position1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Id_Degree" Type="Int32" />
     <NavigationProperty Name="Degree" Relationship="Self.FK_Position_Degree" FromRole="Position" ToRole="Degree" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Position" FromRole="Position" ToRole="Employee" />

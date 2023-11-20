@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Uchebnaya_Azaliya.Base;
 
 namespace Uchebnaya_Azaliya.Pages
 {
@@ -27,9 +28,28 @@ namespace Uchebnaya_Azaliya.Pages
             if (App.IsAdmin == false)
             {
                 AddBtn.Visibility = Visibility.Hidden;
+                EditBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
             }
         }
         private void ListStudentList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Student student = new Student();
+            Navigation.NextPage(new PageComponent("Добавление новой записи", new EditStudentList(student)));
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Student student = ListStudentList.SelectedItem as Student;
+            if(student != null)
+                Navigation.NextPage(new PageComponent("Редактирование записи", new EditStudentList(student)));
+        }
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

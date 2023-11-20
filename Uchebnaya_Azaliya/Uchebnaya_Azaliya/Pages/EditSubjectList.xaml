@@ -1,0 +1,28 @@
+﻿<Page x:Class="Uchebnaya_Azaliya.Pages.EditSubjectList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Uchebnaya_Azaliya.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditSubjectList">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Дисциплина</TextBlock>
+                <TextBox Width="200" x:Name="SubjectTb"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="3 0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Margin="0 0 3 0">Аббревиатура</TextBlock>
+                <ComboBox  x:Name="AbbCb" Width="200" DisplayMemberPath = "Id_Lectern"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock>Код</TextBlock>
+                <TextBox Width="200" IsEnabled="False" x:Name="IdTb"></TextBox>
+            </StackPanel>
+            <Button Width="100" x:Name="SaveBtn">Сохранить</Button>
+        </StackPanel>
+    </Grid>
+</Page>
