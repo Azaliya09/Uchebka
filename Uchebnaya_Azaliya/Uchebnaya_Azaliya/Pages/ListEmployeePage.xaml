@@ -34,7 +34,7 @@
                         <GridViewColumn Width="120" Header="Код сотрудника" DisplayMemberBinding="{Binding Id_Employee}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="ФИО" DisplayMemberBinding="{Binding Surname}"></GridViewColumn>
                         <GridViewColumn Width="150" Header="Должность" DisplayMemberBinding="{Binding Position.Position1}"></GridViewColumn>
-                        <GridViewColumn Width="120" Header="Оклад" DisplayMemberBinding="{Binding Salary}"></GridViewColumn>
+                        <GridViewColumn Width="120" Header="Оклад" DisplayMemberBinding="{Binding Salary, StringFormat='{}{0:#}'}"></GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

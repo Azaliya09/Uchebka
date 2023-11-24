@@ -57,7 +57,15 @@ namespace Uchebnaya_Azaliya.Pages
                 return;
             }
             if(New)
-                App.db.Examen.Add(examen);
+                App.db.Examen.Add(new Examen
+                {
+                    Date_Examen = Convert.ToDateTime(DateDp.SelectedDate).Date,
+                    Id_Subject = (SubjectCb.SelectedItem as Subject).Id_Subject,
+                    Id_Student = (StudentCb.SelectedItem as Student).Id_Student,
+                    Id_Employee = (EmployeeCb.SelectedItem as Employee).Id_Employee,
+                    Auditory = AuditoryTb.Text,
+                    Mark = Convert.ToInt32(MarkTb.Text),
+                });
             else
             {
                 var _examen = App.db.Examen.Where(x => x.Date_Examen == examen.Date_Examen && x.Id_Student == examen.Id_Student).FirstOrDefault();

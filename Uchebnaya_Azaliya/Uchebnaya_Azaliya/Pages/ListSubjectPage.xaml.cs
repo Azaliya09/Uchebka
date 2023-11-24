@@ -54,6 +54,7 @@ namespace Uchebnaya_Azaliya.Pages
                 App.db.Subject.Remove(subject);
                 App.db.SaveChanges();
                 ListSubjectList.ItemsSource = App.db.Subject.ToList();
+                MessageBox.Show("Удалено!");
             }
         }
         public void Refresh()

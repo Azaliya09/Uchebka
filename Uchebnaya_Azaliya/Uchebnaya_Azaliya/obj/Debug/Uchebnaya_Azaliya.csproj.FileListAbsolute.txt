@@ -73,3 +73,5 @@ C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Page
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditSubjectList.g.cs
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditStudentList.baml
 C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\obj\Debug\Pages\EditSubjectList.baml
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\bin\Debug\QRCoder.dll
+C:\Users\user\Desktop\Uchebka\Uchebnaya_Azaliya\Uchebnaya_Azaliya\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

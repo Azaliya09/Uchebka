@@ -9,10 +9,12 @@
       Title="AuthorizatePage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin=" 0 50 0 0">
             <TextBlock HorizontalAlignment="Center">Необходимо войти в систему</TextBlock>
             <PasswordBox x:Name="PasswordPb"  Margin="5" Height="30"></PasswordBox>
             <Button Width="80" x:Name="EnterBtn" Click="EnterBtn_Click">Войти</Button>
+            <Image x:Name="imageQr"  Width="150" Margin="15" Height="150"></Image>
         </StackPanel>
     </Grid>
 </Page>

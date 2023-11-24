@@ -14,9 +14,10 @@ namespace Uchebnaya_Azaliya.Base
     
     public partial class Examen
     {
+        public int Id_Examen { get; set; }
         public System.DateTime Date_Examen { get; set; }
         public int Id_Subject { get; set; }
-        public int Id_Student { get; set; }
+        public Nullable<int> Id_Student { get; set; }
         public Nullable<int> Id_Employee { get; set; }
         public string Auditory { get; set; }
         public Nullable<int> Mark { get; set; }

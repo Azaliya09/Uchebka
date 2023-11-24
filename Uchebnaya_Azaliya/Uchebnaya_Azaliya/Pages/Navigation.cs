@@ -25,13 +25,15 @@ namespace Uchebnaya_Azaliya.Pages
         public static void Update(PageComponent pageComponent)
         {
             mainWindow.TitleTb.Text = pageComponent.Title;
-            mainWindow.BackBTN.Visibility = components.Count() > 1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            mainWindow.BackBTN.Visibility = components.Count() > 1 && App.IsStudent == false ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             mainWindow.ExitBTN.Visibility = App.IsAdmin || App.IsEmployee || App.IsStudent ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             mainWindow.MyFrame.Navigate(pageComponent.Page);
         }
-        public static void NextPage(PageComponent pageComponent)
+        public static void NextPage(PageComponent pageComponent)        
         {
-            components.Add(pageComponent);
+
+            if(pageComponent.Title != "Редактирование записи" && pageComponent.Title != "Добавление записи")
+                components.Add(pageComponent);
             Update(pageComponent);
 
         }

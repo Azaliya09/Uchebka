@@ -24,7 +24,7 @@ namespace Uchebnaya_Azaliya.Pages
         public ListEmployeePage()
         {
             InitializeComponent();
-            EmployeeList.ItemsSource = App.db.Employee.ToList();
+            Refresh();
             if (App.IsAdmin == false)
             {
                 AddBtn.Visibility = Visibility.Hidden;
@@ -52,6 +52,7 @@ namespace Uchebnaya_Azaliya.Pages
                 App.db.Employee.Remove(employee);
                 App.db.SaveChanges();
                 EmployeeList.ItemsSource = App.db.Employee.ToList();
+                MessageBox.Show("Удалено!");
             }
         }
         public void Refresh()

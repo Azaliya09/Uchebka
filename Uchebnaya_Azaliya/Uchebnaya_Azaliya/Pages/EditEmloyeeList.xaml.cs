@@ -28,6 +28,7 @@ namespace Uchebnaya_Azaliya.Pages
         {
             InitializeComponent();
             employee = _employee;
+            this.DataContext = employee;
             if (employee.Id_Employee == null || employee.Id_Employee == 0)
                 New = true;
             PositionCb.ItemsSource = App.db.Position.ToList();
@@ -44,7 +45,7 @@ namespace Uchebnaya_Azaliya.Pages
             IdTb.Text = employee.Id_Employee.ToString();
             NameTb.Text = employee.Surname;
             PositionCb.SelectedItem = employee.Position;
-            SalaryTb.Text = employee.Salary.ToString();
+            
         }
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -54,7 +55,13 @@ namespace Uchebnaya_Azaliya.Pages
                 return;
             }
             if (New)
-                App.db.Employee.Add(employee);
+                App.db.Employee.Add(new Employee
+                {
+                    Id_Employee = Convert.ToInt32(IdTb.Text),
+                    Surname = NameTb.Text,
+                    Id_Position = Convert.ToInt32((PositionCb.SelectedItem as Position).Id_Position),
+                    
+                });
             else
             {
                 var _employee = App.db.Employee.Where(x => x.Id_Employee == employee.Id_Employee).FirstOrDefault();
@@ -62,8 +69,7 @@ namespace Uchebnaya_Azaliya.Pages
                 {
                     _employee.Id_Employee = Convert.ToInt32(IdTb.Text);
                     _employee.Surname = NameTb.Text;
-                    _employee.Id_Position = Convert.ToInt32((PositionCb.SelectedItem as Position).Position1);
-                    _employee.Salary = Convert.ToInt32(SalaryTb.Text);
+                    _employee.Id_Position = Convert.ToInt32((PositionCb.SelectedItem as Position).Id_Position);             
                 }
             }
             App.db.SaveChanges();

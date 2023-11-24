@@ -27,7 +27,6 @@ namespace Uchebnaya_Azaliya.Base
     
         public virtual DbSet<Degree> Degree { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<Examen> Examen { get; set; }
         public virtual DbSet<Faculty> Faculty { get; set; }
         public virtual DbSet<Lectern> Lectern { get; set; }
         public virtual DbSet<Position> Position { get; set; }
@@ -35,5 +34,6 @@ namespace Uchebnaya_Azaliya.Base
         public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Examen> Examen { get; set; }
     }
 }

@@ -53,14 +53,19 @@ namespace Uchebnaya_Azaliya.Pages
                 return;
             }
             if (New)
-                App.db.Student.Add(student);
+                App.db.Student.Add(new Student
+                {
+                    Id_Student = Convert.ToInt32(IdTb.Text),
+                    Id_Spec = (SpecsCb.SelectedItem as Specs).Id_Spec,
+                    Surname_Student = NameTb.Text,
+                });
             else
             {
                 var _student = App.db.Student.Where(x => x.Id_Student == student.Id_Student).FirstOrDefault();
                 if (_student != null)
                 {
                     _student.Id_Student = Convert.ToInt32(IdTb.Text);
-                    _student.Id_Spec = (SpecsCb.SelectedItem as Specs).Direction;
+                    _student.Id_Spec = (SpecsCb.SelectedItem as Specs).Id_Spec;
                     _student.Surname_Student = NameTb.Text;
                 }
             }

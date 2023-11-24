@@ -24,7 +24,7 @@
             </StackPanel>
             <StackPanel Margin="3 0" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Оклад</TextBlock>
-                <TextBox Width="200" x:Name="SalaryTb"></TextBox>
+                <TextBox Width="200" x:Name="SalaryTb" Text="{Binding Salary, StringFormat='{}{0:#}'}"></TextBox>
             </StackPanel>
             <Button Width="100" x:Name="SaveBtn"  Click="SaveBtn_Click">Сохранить</Button>
         </StackPanel>

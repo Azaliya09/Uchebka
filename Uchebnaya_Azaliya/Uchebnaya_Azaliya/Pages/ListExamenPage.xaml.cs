@@ -51,6 +51,7 @@ namespace Uchebnaya_Azaliya.Pages
                 App.db.Examen.Remove(examen);
                 App.db.SaveChanges();
                 MarksList.ItemsSource = App.db.Examen.ToList();
+                MessageBox.Show("Удалено!");
             }    
         }
         public void Refresh()

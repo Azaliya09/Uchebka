@@ -57,6 +57,7 @@ namespace Uchebnaya_Azaliya.Pages
                 App.db.Student.Remove(student);
                 App.db.SaveChanges();
                 ListStudentList.ItemsSource = App.db.Student.ToList();
+                MessageBox.Show("Удалено!");
             }
         }
         public void Refresh()

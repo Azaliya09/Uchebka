@@ -25,8 +25,8 @@ namespace Uchebnaya_Azaliya.Base
         public string Surname_Student { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
     
+        public virtual Specs Specs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Examen> Examen { get; set; }
-        public virtual Specs Specs { get; set; }
     }
 }

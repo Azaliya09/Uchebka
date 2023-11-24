@@ -51,7 +51,12 @@ namespace Uchebnaya_Azaliya.Pages
                 return;
             }
             if (New)
-                App.db.Subject.Add(subject);
+                App.db.Subject.Add(new Subject
+                    {
+                        Name_Subject = SubjectTb.Text,
+                        Id_Lectern = (AbbCb.SelectedItem as Lectern).Id_Lectern,
+                        Id_Subject = Convert.ToInt32(IdTb.Text),
+                    });
             else
             {
                 var _subject = App.db.Subject.Where(x => x.Id_Subject == subject.Id_Subject).FirstOrDefault();

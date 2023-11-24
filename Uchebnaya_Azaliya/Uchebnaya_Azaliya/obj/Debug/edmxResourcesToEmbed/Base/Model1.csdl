@@ -24,22 +24,7 @@
     <NavigationProperty Name="Employee1" Relationship="Self.FK_Employee_To_Chief" FromRole="Employee" ToRole="Employee1" />
     <NavigationProperty Name="Employee2" Relationship="Self.FK_Employee_To_Chief" FromRole="Employee1" ToRole="Employee" />
     <NavigationProperty Name="Lectern" Relationship="Self.FK_Employee_To_Lectern" FromRole="Employee" ToRole="Lectern" />
-    <NavigationProperty Name="Examen" Relationship="Self.FK_Exam_To_Employee" FromRole="Employee" ToRole="Examen" />
-  </EntityType>
-  <EntityType Name="Examen">
-    <Key>
-      <PropertyRef Name="Date_Examen" />
-      <PropertyRef Name="Id_Student" />
-    </Key>
-    <Property Name="Date_Examen" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Id_Subject" Type="Int32" Nullable="false" />
-    <Property Name="Id_Student" Type="Int32" Nullable="false" />
-    <Property Name="Id_Employee" Type="Int32" />
-    <Property Name="Auditory" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="Mark" Type="Int32" />
-    <NavigationProperty Name="Employee" Relationship="Self.FK_Exam_To_Employee" FromRole="Examen" ToRole="Employee" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Exam_To_Student" FromRole="Examen" ToRole="Student" />
-    <NavigationProperty Name="Subject" Relationship="Self.FK_Exam_To_Subject" FromRole="Examen" ToRole="Subject" />
+    <NavigationProperty Name="Examen" Relationship="Uchebka_SSModel.FK_Exam_To_Employee" FromRole="Employee" ToRole="Examen" />
   </EntityType>
   <EntityType Name="Faculty">
     <Key>
@@ -90,8 +75,8 @@
     <Property Name="Id_Spec" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
     <Property Name="Surname_Student" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IsDeleted" Type="Boolean" />
-    <NavigationProperty Name="Examen" Relationship="Self.FK_Exam_To_Student" FromRole="Student" ToRole="Examen" />
     <NavigationProperty Name="Specs" Relationship="Self.FK_Student_To_Spec" FromRole="Student" ToRole="Specs" />
+    <NavigationProperty Name="Examen" Relationship="Uchebka_SSModel.FK_Exam_To_Student" FromRole="Student" ToRole="Examen" />
   </EntityType>
   <EntityType Name="Subject">
     <Key>
@@ -102,9 +87,9 @@
     <Property Name="Name_Subject" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="Id_Lectern" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
     <Property Name="IsDeleted" Type="Boolean" />
-    <NavigationProperty Name="Examen" Relationship="Self.FK_Exam_To_Subject" FromRole="Subject" ToRole="Examen" />
     <NavigationProperty Name="Lectern" Relationship="Self.FK_Subject_To_Lectern" FromRole="Subject" ToRole="Lectern" />
     <NavigationProperty Name="Specs" Relationship="Self.Request" FromRole="Subject" ToRole="Specs" />
+    <NavigationProperty Name="Examen" Relationship="Uchebka_SSModel.FK_Exam_To_Subject" FromRole="Subject" ToRole="Examen" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -164,42 +149,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Exam_To_Employee">
-    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
-    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employee">
-        <PropertyRef Name="Id_Employee" />
-      </Principal>
-      <Dependent Role="Examen">
-        <PropertyRef Name="Id_Employee" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Exam_To_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="1" />
-    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Student">
-        <PropertyRef Name="Id_Student" />
-      </Principal>
-      <Dependent Role="Examen">
-        <PropertyRef Name="Id_Student" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Exam_To_Subject">
-    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
-    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Subject">
-        <PropertyRef Name="Id_Subject" />
-      </Principal>
-      <Dependent Role="Examen">
-        <PropertyRef Name="Id_Subject" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Lectern_To_Faculty">
     <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
     <End Role="Lectern" Type="Self.Lectern" Multiplicity="*" />
@@ -255,7 +204,6 @@
   <EntityContainer Name="Uchebka_SSEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Degree" EntityType="Self.Degree" />
     <EntitySet Name="Employee" EntityType="Self.Employee" />
-    <EntitySet Name="Examen" EntityType="Self.Examen" />
     <EntitySet Name="Faculty" EntityType="Self.Faculty" />
     <EntitySet Name="Lectern" EntityType="Self.Lectern" />
     <EntitySet Name="Position" EntityType="Self.Position" />
@@ -279,18 +227,6 @@
       <End Role="Lectern" EntitySet="Lectern" />
       <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
-    <AssociationSet Name="FK_Exam_To_Employee" Association="Self.FK_Exam_To_Employee">
-      <End Role="Employee" EntitySet="Employee" />
-      <End Role="Examen" EntitySet="Examen" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Exam_To_Student" Association="Self.FK_Exam_To_Student">
-      <End Role="Student" EntitySet="Student" />
-      <End Role="Examen" EntitySet="Examen" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Exam_To_Subject" Association="Self.FK_Exam_To_Subject">
-      <End Role="Subject" EntitySet="Subject" />
-      <End Role="Examen" EntitySet="Examen" />
-    </AssociationSet>
     <AssociationSet Name="FK_Lectern_To_Faculty" Association="Self.FK_Lectern_To_Faculty">
       <End Role="Faculty" EntitySet="Faculty" />
       <End Role="Lectern" EntitySet="Lectern" />
@@ -311,5 +247,69 @@
       <End Role="Specs" EntitySet="Specs" />
       <End Role="Subject" EntitySet="Subject" />
     </AssociationSet>
+    <EntitySet Name="Examen" EntityType="Uchebka_SSModel.Examen" />
+    <AssociationSet Name="FK_Exam_To_Employee" Association="Uchebka_SSModel.FK_Exam_To_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_To_Student" Association="Uchebka_SSModel.FK_Exam_To_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_To_Subject" Association="Uchebka_SSModel.FK_Exam_To_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Examen">
+    <Key>
+      <PropertyRef Name="Id_Examen" />
+    </Key>
+    <Property Name="Id_Examen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_Examen" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Id_Subject" Type="Int32" Nullable="false" />
+    <Property Name="Id_Student" Type="Int32" />
+    <Property Name="Id_Employee" Type="Int32" />
+    <Property Name="Auditory" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mark" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Uchebka_SSModel.FK_Exam_To_Employee" FromRole="Examen" ToRole="Employee" />
+    <NavigationProperty Name="Student" Relationship="Uchebka_SSModel.FK_Exam_To_Student" FromRole="Examen" ToRole="Student" />
+    <NavigationProperty Name="Subject" Relationship="Uchebka_SSModel.FK_Exam_To_Subject" FromRole="Examen" ToRole="Subject" />
+  </EntityType>
+  <Association Name="FK_Exam_To_Employee">
+    <End Type="Uchebka_SSModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="Uchebka_SSModel.Examen" Role="Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id_Employee" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="Id_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_To_Student">
+    <End Type="Uchebka_SSModel.Student" Role="Student" Multiplicity="0..1" />
+    <End Type="Uchebka_SSModel.Examen" Role="Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id_Student" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="Id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_To_Subject">
+    <End Type="Uchebka_SSModel.Subject" Role="Subject" Multiplicity="1" />
+    <End Type="Uchebka_SSModel.Examen" Role="Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id_Subject" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="Id_Subject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

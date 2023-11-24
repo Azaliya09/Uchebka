@@ -22,12 +22,12 @@
   </EntityType>
   <EntityType Name="Examen">
     <Key>
-      <PropertyRef Name="Date_Examen" />
-      <PropertyRef Name="Id_Student" />
+      <PropertyRef Name="Id_Examen" />
     </Key>
+    <Property Name="Id_Examen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Date_Examen" Type="date" Nullable="false" />
     <Property Name="Id_Subject" Type="int" Nullable="false" />
-    <Property Name="Id_Student" Type="int" Nullable="false" />
+    <Property Name="Id_Student" Type="int" />
     <Property Name="Id_Employee" Type="int" />
     <Property Name="Auditory" Type="nvarchar" MaxLength="10" />
     <Property Name="Mark" Type="int" />
@@ -149,7 +149,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Exam_To_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
     <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Student">

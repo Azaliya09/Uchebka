@@ -23,18 +23,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Examen">
-      <EntityTypeMapping TypeName="Uchebka_SSModel.Examen">
-        <MappingFragment StoreEntitySet="Examen">
-          <ScalarProperty Name="Date_Examen" ColumnName="Date_Examen" />
-          <ScalarProperty Name="Id_Subject" ColumnName="Id_Subject" />
-          <ScalarProperty Name="Id_Student" ColumnName="Id_Student" />
-          <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
-          <ScalarProperty Name="Auditory" ColumnName="Auditory" />
-          <ScalarProperty Name="Mark" ColumnName="Mark" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Faculty">
       <EntityTypeMapping TypeName="Uchebka_SSModel.Faculty">
         <MappingFragment StoreEntitySet="Faculty">
@@ -110,5 +98,18 @@
         <ScalarProperty Name="Id_Subject" ColumnName="Id_Subject" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Examen">
+      <EntityTypeMapping TypeName="Uchebka_SSModel.Examen">
+        <MappingFragment StoreEntitySet="Examen">
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="Auditory" ColumnName="Auditory" />
+          <ScalarProperty Name="Id_Employee" ColumnName="Id_Employee" />
+          <ScalarProperty Name="Id_Student" ColumnName="Id_Student" />
+          <ScalarProperty Name="Id_Subject" ColumnName="Id_Subject" />
+          <ScalarProperty Name="Date_Examen" ColumnName="Date_Examen" />
+          <ScalarProperty Name="Id_Examen" ColumnName="Id_Examen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
